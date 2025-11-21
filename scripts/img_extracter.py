@@ -21,7 +21,7 @@ def generate_name(name, replace_character='-'):
 
     return name
 
-def optimize_image(image_bytes, max_width=800, quality=85, output_format='webp'):
+def optimize_image(image_bytes, max_width=300, quality=60, output_format='webp'):
     """
     Optimize image for web: resize and compress.
     
