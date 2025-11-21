@@ -125,7 +125,7 @@ function renderTable() {
       <td>${i18n.getCardName(c.nameKey)}</td>
       <td>${c.point}</td>
       <td>${c.group}</td>
-      <td>${c.region}</td>
+      <td style="display:none;">${c.region}</td>
       <td>${c.id}</td>
     </tr>
   `).join("");
