@@ -61,17 +61,22 @@ function sortTable(column) {
   renderTable();
 }
 
-function renderTable() {
+// Get currently filtered/visible cards
+function getFilteredCards() {
   const search = document.getElementById("searchBox").value.toLowerCase();
   const filterRegion = document.getElementById("filterRegion").value;
   const filterGroup = document.getElementById("filterGroup").value;
 
-  let list = cards.filter(c => {
+  return cards.filter(c => {
     const cardName = i18n.getCardName(c.nameKey).toLowerCase();
     return cardName.includes(search) &&
       (filterRegion ? c.region === filterRegion : true) &&
       (filterGroup ? c.group == filterGroup : true);
   });
+}
+
+function renderTable() {
+  let list = getFilteredCards();
   
   if (sortColumn) {
     list.sort((a, b) => {
@@ -126,13 +131,19 @@ function resetCards() {
 }
 
 function selectAll() {
-  cards.forEach(c => selected.add(c.id));
+  // Only select currently visible/filtered cards
+  const filteredCards = getFilteredCards();
+  filteredCards.forEach(c => selected.add(c.id));
   saveSelections();
   renderTable();
 }
 
 function reverseSelect() {
-  cards.forEach(c => selected.has(c.id) ? selected.delete(c.id) : selected.add(c.id));
+  // Only reverse selection for currently visible/filtered cards
+  const filteredCards = getFilteredCards();
+  filteredCards.forEach(c => {
+    selected.has(c.id) ? selected.delete(c.id) : selected.add(c.id);
+  });
   saveSelections();
   renderTable();
 }
