@@ -186,8 +186,8 @@ function selectAll() {
   renderTable();
 }
 
-function reverseSelect() {
-  // Only reverse selection for currently visible/filtered cards
+function invertSelect() {
+  // Only invert selection for currently visible/filtered cards
   const filteredCards = getFilteredCards();
   filteredCards.forEach(c => {
     selected.has(c.id) ? selected.delete(c.id) : selected.add(c.id);

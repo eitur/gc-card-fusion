@@ -9,7 +9,7 @@
       "search": "카드 검색...",
       "reset": "초기화",
       "selectAll": "전체 선택",
-      "reverse": "선택 반전",
+      "invert": "선택 반전",
       "noCards": "선택된 카드 없음",
       "region": "지역",
       "cardName": "카드",

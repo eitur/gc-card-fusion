@@ -9,7 +9,7 @@
       "search": "Pesquisar cartas...",
       "reset": "Redefinir",
       "selectAll": "Selecionar Tudo",
-      "reverse": "Inverter",
+      "invert": "Inverter",
       "noCards": "Nenhuma carta selecionada",
       "region": "Região",
       "cardName": "Carta",
